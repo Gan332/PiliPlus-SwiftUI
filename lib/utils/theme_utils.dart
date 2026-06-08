@@ -1,4 +1,5 @@
 import 'package:PiliPlus/common/style.dart';
+import 'package:PiliPlus/design_system/theme/theme_data.dart';
 import 'package:PiliPlus/utils/extension/theme_ext.dart';
 import 'package:PiliPlus/utils/storage_pref.dart';
 import 'package:flutter/cupertino.dart' show CupertinoThemeData;
@@ -90,14 +91,13 @@ abstract final class ThemeUtils {
         surfaceTintColor: isDynamic ? colorScheme.onSurfaceVariant : null,
       ),
       cardTheme: CardThemeData(
-        elevation: 1,
+        elevation: 0,
         margin: EdgeInsets.zero,
-        surfaceTintColor: isDynamic
-            ? colorScheme.onSurfaceVariant
-            : isDark
-            ? colorScheme.onSurfaceVariant
-            : null,
+        surfaceTintColor: Colors.transparent,
         shadowColor: Colors.transparent,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(14),
+        ),
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         // ignore: deprecated_member_use
@@ -146,10 +146,14 @@ abstract final class ThemeUtils {
       ),
       pageTransitionsTheme: const PageTransitionsTheme(
         builders: {
-          TargetPlatform.android: ZoomPageTransitionsBuilder(),
+          TargetPlatform.android: CupertinoPageTransitionsBuilder(),
         },
       ),
     );
+
+    // Apply SwiftUI-style enhancements
+    themeData = SwiftUITheme.apply(themeData);
+
     if (isDark) {
       if (Pref.isPureBlackTheme) {
         themeData = darkenTheme(themeData);
