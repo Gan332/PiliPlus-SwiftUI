@@ -1,6 +1,9 @@
 name: Build
 
 on:
+    push:
+        branches:
+            - swiftui-redesign
     pull_request:
         types:
             - opened
