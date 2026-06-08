@@ -2,7 +2,7 @@ import 'package:PiliPlus/common/style.dart';
 import 'package:PiliPlus/design_system/theme/theme_data.dart';
 import 'package:PiliPlus/utils/extension/theme_ext.dart';
 import 'package:PiliPlus/utils/storage_pref.dart';
-import 'package:flutter/cupertino.dart' show CupertinoThemeData;
+import 'package:flutter/cupertino.dart' show CupertinoPageTransitionsBuilder, CupertinoThemeData;
 import 'package:flutter/foundation.dart' show PlatformDispatcher;
 import 'package:flutter/material.dart';
 
