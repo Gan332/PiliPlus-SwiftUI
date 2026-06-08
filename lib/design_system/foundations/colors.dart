@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 /// Mirrors Apple's system colors for a native feel
 abstract final class SwiftUIColor {
   // MARK: - System Colors (Light)
-  static const _light = _SystemColorsLight._;
-  static const _dark = _SystemColorsDark._;
+  static const _light = _SystemColorsLight._();
+  static const _dark = _SystemColorsDark._();
 
   // MARK: - Backgrounds
   static Color background(BuildContext context) =>
